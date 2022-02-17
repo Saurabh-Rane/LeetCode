@@ -24,12 +24,6 @@ class Solution:
             if left and right:
                 return node
             
-            if left and not right:
-                return left
-            
-            if not left and right:
-                return right
-            
-            return None
+            return left if left else right
         
         return postorder(root)
