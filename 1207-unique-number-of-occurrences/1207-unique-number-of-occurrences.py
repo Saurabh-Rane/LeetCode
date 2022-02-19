@@ -7,9 +7,7 @@ class Solution:
             
         hashset = set()
         
-        for i in hashmap:
-            if hashmap[i] in hashset:
-                return False
-            hashset.add(hashmap[i])
-            
-        return True
+        if len(hashmap.values()) != len(set(hashmap.values())):
+            return False
+        else:
+            return True
