@@ -4,10 +4,7 @@ class Solution:
         psdc = 0
         res = 0
         for i in bank:
-            count = 0
-            for device in i:
-                if device == '1':
-                    count += 1
+            count = i.count('1')
             res += count * psdc
             if count:
                 psdc = count
