@@ -6,10 +6,7 @@ class MovingAverage:
 
     def next(self, val: int) -> float:
         self.array.append(val)
-        if len(self.array) < self.size:
-            return sum(self.array) / len(self.array)
-        else:
-            return sum(self.array[-self.size:]) / self.size
+        return sum(self.array[-self.size:]) / min(self.size, len(self.array))
 
 
 # Your MovingAverage object will be instantiated and called as such:
