@@ -1,11 +1,15 @@
 class Solution:
     def kthFactor(self, n: int, k: int) -> int:
-        ans = -1
-        for i in range(1, n + 1):
-            if n % i == 0:
+        for i in range(1, math.ceil(math.sqrt(n))):
+            if not n % i:
                 k -= 1
-                ans = i if k == 0 else ans
+                if not k:
+                    return i
+                
+        for i in range(int(math.sqrt(n)) , 0, -1):
+            if not n % i:
+                k -= 1
+                if not k:
+                    return int(n/i)
         
-        return ans
-            
-        
+        return -1
