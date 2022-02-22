@@ -5,7 +5,7 @@ class Solution:
         for i in range(len(nums)):
             smallest = nums[i]
             largest = nums[i]
-            for j in range(i, len(nums)):
+            for j in range(i + 1, len(nums)):
                 smallest = min(smallest, nums[j])
                 largest = max(largest, nums[j])
                 total += largest - smallest
