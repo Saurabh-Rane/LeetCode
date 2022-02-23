@@ -1,7 +1,7 @@
 class Solution:
     def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:
-        res = []
         hashmap = collections.defaultdict(list)
+        res = []
         
         for i in range(len(groupSizes)):
             if len(hashmap[groupSizes[i]]) < groupSizes[i]:
@@ -9,7 +9,7 @@ class Solution:
             else:
                 res.append(hashmap[groupSizes[i]])
                 hashmap[groupSizes[i]] = [i]
-            
+                
         for i in hashmap:
             res.append(hashmap[i])
             
