@@ -1,12 +1,14 @@
 class Solution:
     def minPairSum(self, nums: List[int]) -> int:
-        maxSum = 0
         nums.sort()
-        l, r = 0, len(nums) - 1
-        while l < r:
-            currSum = nums[l] + nums[r]
-            maxSum = max(maxSum, currSum)
-            l += 1
-            r -= 1
+        maxp = 0
         
-        return maxSum
+        left, right = 0, len(nums) - 1
+        
+        while left < right:
+            maxp = max(maxp, nums[left] + nums[right])
+            left += 1
+            right -= 1
+            
+        return maxp
+        
