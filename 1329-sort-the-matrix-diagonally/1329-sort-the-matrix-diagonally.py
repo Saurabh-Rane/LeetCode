@@ -16,4 +16,3 @@ class Solution:
                 mat[i][j] = heapq.heappop(hashmap[i - j])
                 
         return mat
-        
