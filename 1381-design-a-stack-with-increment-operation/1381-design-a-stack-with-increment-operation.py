@@ -9,7 +9,6 @@ class CustomStack:
         if self.currsize < self.maxSize:
             self.customStack[self.currsize] = x
             self.currsize += 1
-            print(self.customStack, self.currsize, self.maxSize)
         
     def pop(self) -> int:
         if self.currsize:
