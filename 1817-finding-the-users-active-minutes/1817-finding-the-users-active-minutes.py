@@ -1,13 +1,13 @@
 class Solution:
     def findingUsersActiveMinutes(self, logs: List[List[int]], k: int) -> List[int]:
-        res = [0] * k
-        hashmap = collections.defaultdict(set)
+        hashset = collections.defaultdict(set)
+        ans = [0] * k
         
-        for i,j in logs:
-            hashmap[i].add(j)
+        for i, j in logs:
+            hashset[i].add(j)
             
-        for i in hashmap:
-            res[len(hashmap[i]) - 1] += 1
+        for i in hashset:
+            ans[len(hashset[i]) - 1] += 1
             
-        return res
-            
+        return ans
+        
