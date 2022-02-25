@@ -1,21 +1,19 @@
 class CustomStack:
 
     def __init__(self, maxSize: int):
-        self.stack = [0] * maxSize
+        self.stack = []
         self.maxSize = maxSize
         self.size = 0
 
     def push(self, x: int) -> None:
         if self.size < self.maxSize:
-            self.stack[self.size] = x
+            self.stack.append(x)
             self.size += 1
 
     def pop(self) -> int:
         if self.size :
-            a = self.stack[self.size - 1]
-            self.stack[self.size - 1] = 0
             self.size -= 1
-            return a
+            return self.stack.pop()
         else:
             return -1
         
