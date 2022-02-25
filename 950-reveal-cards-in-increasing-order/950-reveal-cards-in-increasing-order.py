@@ -6,5 +6,3 @@ class Solution:
             res = [deck.pop()] + [res.pop()] + res
             
         return res
-                    
-        
