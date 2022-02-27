@@ -7,10 +7,11 @@ class Solution:
         
         for i in range(len(nums)):
             val = nums.pop(0)
-            pers = self.permute(nums)
-            for per in pers:
-                per.append(val)
-            res.extend(pers)
+            perms = self.permute(nums)
+            
+            for perm in perms:
+                perm.append(val)
+            res.extend(perms)
             nums.append(val)
             
         return res
