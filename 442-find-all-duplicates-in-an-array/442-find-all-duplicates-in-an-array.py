@@ -1,3 +1,13 @@
 class Solution:
     def findDuplicates(self, nums: List[int]) -> List[int]:
-        return [i for i, j in collections.Counter(nums).items() if j > 1]
+        count = []
+        
+        for i in nums:
+            val = abs(i)
+            if nums[val - 1] < 0:
+                count.append(val)
+            else:
+                nums[val - 1] *= -1
+            
+        return count
+        
