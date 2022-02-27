@@ -1,16 +1,17 @@
 class Solution:
     def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
-        res = collections.defaultdict(int)
-        temp = []
-        for i in cpdomains:
-            count, text = i.split()
-            count = int(count)
-            subtext = text.split(".")
-            for j in range(len(subtext)):
-                res['.'.join(subtext[j:])] += count
-                
-        for i, j in res.items():
-            temp.append(str(j) + ' ' + str(i))
+        freq = collections.defaultdict(int)
+        res = []
         
-        return temp
+        for text in cpdomains:
+            count, domain = text.split()
+            subdomains = domain.split('.')
+            for subdomain in range(len(subdomains)):
+                freq['.'.join(subdomains[subdomain:])] += int(count)
+                
+        for i in freq:
+            res.append(str(freq[i]) + ' ' + i )
             
+        return res
+            
+        
