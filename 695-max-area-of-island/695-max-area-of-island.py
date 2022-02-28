@@ -2,11 +2,10 @@ class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         row, col = len(grid), len(grid[0])
         area = 0
-        hashset = set()
         def dfs(r, c):
-            if r < 0 or c < 0 or (r, c) in hashset or r == row or c == col or grid[r][c] == 0:
+            if r < 0 or c < 0 or r == row or c == col or grid[r][c] == 0 or grid[r][c] == -1:
                 return 0
-            hashset.add((r, c))
+            grid[r][c] = -1
             return (1 + dfs(r + 1, c) +
                    dfs(r, c + 1) +
                    dfs(r - 1, c) +
