@@ -23,6 +23,5 @@ class Solution:
             for i in adj:
                 if i not in seen:
                     curr = i
-                    
-        
+                    break
         return res
