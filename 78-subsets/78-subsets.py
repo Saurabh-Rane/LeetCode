@@ -3,17 +3,17 @@ class Solution:
         res = []
         subset = []
         
-        def helper(i):
+        def dfs(i):
             if i >= len(nums):
                 res.append(subset[:])
                 return
             
             subset.append(nums[i])
-            helper(i + 1)
+            dfs(i + 1)
             
             subset.pop()
-            helper(i + 1)
+            dfs(i + 1)
+            
         
-        helper(0)
+        dfs(0)
         return res
-        
