@@ -15,7 +15,7 @@ class HitCounter:
     def getHits(self, timestamp: int) -> int:
         res = 0
         for i in range(300):
-            if self.time[i] > timestamp - 300:
+            if timestamp >= self.time[i] > timestamp - 300:
                 res += self.count[i]
         return res
 
