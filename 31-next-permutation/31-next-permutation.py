@@ -12,8 +12,12 @@ class Solution:
             indexswap -= 1
         
         nums[index], nums[indexswap] = nums[indexswap], nums[index]
-        nums[index + 1:] = sorted(nums[index + 1:])
-        
-        #sortit(index + 1, len(nums) - 1)
+        #nums[index + 1:] = sorted(nums[index + 1:])
+        def sortit(start, end):
+            while start < end:
+                nums[start], nums[end] = nums[end], nums[start]
+                start += 1
+                end -= 1
+        sortit(index + 1, len(nums) - 1)
         
         return nums
