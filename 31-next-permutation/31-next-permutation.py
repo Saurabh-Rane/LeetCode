@@ -8,10 +8,12 @@ class Solution:
             index -= 1
         
         indexswap = len(nums) - 1
-        while indexswap >=0 and nums[indexswap] <= nums[index]:
+        while index >= 0 and indexswap >=0 and nums[indexswap] <= nums[index]:
             indexswap -= 1
         
         nums[index], nums[indexswap] = nums[indexswap], nums[index]
         nums[index + 1:] = sorted(nums[index + 1:])
+        
+        #sortit(index + 1, len(nums) - 1)
         
         return nums
