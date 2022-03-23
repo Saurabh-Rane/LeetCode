@@ -17,7 +17,6 @@ class Solution:
             rightA = a[i + 1] if (i + 1) < len(a) else float("inf")
             leftB = b[j] if j >= 0 else float('-inf')
             rightB = b[j + 1] if (j + 1) < len(b) else float('inf')
-            print(leftA, rightA, leftB, rightB, total)
             
             if leftA <= rightB and leftB <= rightA:
                 if total % 2:
