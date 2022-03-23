@@ -2,11 +2,12 @@ class Solution:
     def longestPalindrome(self, s: str) -> str:
         res = ''
         resLen = 0
+        length = len(s)
         
-        for i in range(len(s)):
+        for i in range(length):
             # odd length substring
             l, r = i, i
-            while l >= 0 and r < len(s) and s[l] == s[r]:
+            while l >= 0 and r < length and s[l] == s[r]:
                 currLen = r - l + 1
                 if currLen > resLen:
                     resLen = currLen
@@ -16,7 +17,7 @@ class Solution:
                 
             # even length substring
             l, r = i, i + 1
-            while l >= 0 and r < len(s) and s[l] == s[r]:
+            while l >= 0 and r < length and s[l] == s[r]:
                 currLen = r - l + 1
                 if currLen > resLen:
                     resLen = currLen
