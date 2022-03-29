@@ -11,8 +11,6 @@
 #         self.right = right
 class Solution:
     def sortedListToBST(self, head: Optional[ListNode]) -> Optional[TreeNode]:
-        if not head:
-            return None
         array = []
         while head:
             array.append(head.val)
