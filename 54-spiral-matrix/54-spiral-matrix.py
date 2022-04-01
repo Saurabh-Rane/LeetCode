@@ -15,7 +15,7 @@ class Solution:
                 res.append(matrix[i][right - 1])
             right -= 1
             
-            if left >= right or top >= bottom:
+            if not (left < right and top < bottom):
                 break
             
             #bottom row right to left
