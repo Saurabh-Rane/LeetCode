@@ -1,7 +1,7 @@
 class MyHashSet:
 
     def __init__(self):
-        self.size = 100000
+        self.size = 1000
         self.bucket = [[] for i in range(self.size)]
     
     def hashing(self, key):
