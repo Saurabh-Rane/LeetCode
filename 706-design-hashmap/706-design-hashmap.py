@@ -23,7 +23,7 @@ class Bucket:
         for i, kv in enumerate(self.bucket):
             if key == kv[0]:
                 del self.bucket[i]
-                #break
+                break
 
 
 class MyHashMap(object):
