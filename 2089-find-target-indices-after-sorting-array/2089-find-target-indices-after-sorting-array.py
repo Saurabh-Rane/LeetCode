@@ -6,8 +6,8 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] == target:
                 ans.append(i)
-            #elif ans:
-                #break
+            elif ans:
+                break
                 
         return ans
         
