@@ -6,6 +6,7 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] == target:
                 ans.append(i)
+            # break when all target elements are checked     
             elif ans:
                 break
                 
