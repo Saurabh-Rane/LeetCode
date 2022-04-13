@@ -3,11 +3,10 @@ class Solution:
         visitset = set()
         
         def dfs(i, j):
-            #print(i, j)
+            if i < 0 or j < 0 or i == len(grid) or j == len(grid[0]) or grid[i][j] == 0:
+                return 1
             if (i, j) in visitset:
                 return 0
-            elif i < 0 or j < 0 or i == len(grid) or j == len(grid[0]) or grid[i][j] == 0:
-                return 1
             
             visitset.add((i, j))
             perimeter = dfs(i + 1, j)
